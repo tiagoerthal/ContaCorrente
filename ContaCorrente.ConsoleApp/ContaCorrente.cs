@@ -11,22 +11,20 @@ namespace ContaCorrente.ConsoleApp
         //string[] historicooperacao = new string[100];
         //int contadorHistorico = 0;
 
-        public int numero;
-        public int limite;
-        //public int sacar;
-        //public int depositar;
+        public int numeroConta;
+        public int limite;      
         public  double saldo;
 
         public static ContaCorrente CriarConta(int numero, int limiteInicial)
         {
             ContaCorrente conta = new ContaCorrente();
-            conta.numero = numero;
+            conta.numeroConta = numero;
             conta.limite = limiteInicial;
             conta.saldo = 0;
             return conta;
         }
 
-        public void obtersaque(double valor)
+        public void ObterSaque(double valor)
         {
             if (saldo <=0 || valor > saldo)
             {
@@ -36,13 +34,18 @@ namespace ContaCorrente.ConsoleApp
              saldo -= valor;          
         }
 
-        //public static double sacar(ContaCorrente conta, double valor)
-       // {
-            //return ContaCorrente.saldo -= valor;            
-       // }
-       
+        public void ObterSaldo(ContaCorrente conta)
+        {
+            Console.WriteLine($"Conta: {conta.numeroConta}, Saldo: {saldo}");
+        }
 
-             //(int contador = 0; contador<contadorHistorico; contador++)
-                  // Console.WriteLine(historicooperacao[contador]);
+        //public static double sacar(ContaCorrente conta, double valor)
+        // {
+        //return ContaCorrente.saldo -= valor;            
+        // }
+
+
+        //(int contador = 0; contador<contadorHistorico; contador++)
+        // Console.WriteLine(historicooperacao[contador]);
     }
 }
