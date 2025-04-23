@@ -13,12 +13,13 @@
 
             conta1.ObterSaque(200);
 
+            conta1.Depositar(300);
+
+            conta1.Depositar(500);
+
+            conta1.ObterSaque(200);
+
             conta1.ObterSaldo(conta1);
-            //conta1.depositar(300);
-
-            //conta1.Depositar(500);
-
-            //conta1.sacar(200);
 
             ContaCorrente conta2 = new ContaCorrente();
             conta2.saldo = 300;

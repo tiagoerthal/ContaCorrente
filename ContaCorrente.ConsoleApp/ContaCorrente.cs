@@ -34,6 +34,15 @@ namespace ContaCorrente.ConsoleApp
              saldo -= valor;          
         }
 
+        public void Depositar(double valor)
+        {
+            if (valor <= 0)
+            {
+                Console.WriteLine($"Deposito invalido, valor: {valor}");
+                return;
+            }
+            saldo += valor;
+        }
         public void ObterSaldo(ContaCorrente conta)
         {
             Console.WriteLine($"Conta: {conta.numeroConta}, Saldo: {saldo}");
