@@ -47,12 +47,22 @@ namespace ContaCorrente.ConsoleApp
         {
             Console.WriteLine($"Conta: {conta.numeroConta}, Saldo: {saldo}");
         }
-
-        //public static double sacar(ContaCorrente conta, double valor)
-        // {
-        //return ContaCorrente.saldo -= valor;            
-        // }
-
+        public void Transferir(ContaCorrente contaFim, double valor)
+        {
+            if (saldo <= 0 || saldo < valor || valor <= 0)
+            {
+                Console.WriteLine($"Fundos insuficientes, valor: {valor}");
+                return;
+            }
+            if (contaFim.numeroConta == numeroConta)
+            {
+                Console.WriteLine("Incapaz de tranferir para mesma conta");
+                return;
+            }
+            saldo -= valor;
+            contaFim.saldo += valor;
+            Console.WriteLine($"Tranferencia de RS{valor} para conta: {contaFim.numeroConta} ");
+        }       
 
         //(int contador = 0; contador<contadorHistorico; contador++)
         // Console.WriteLine(historicooperacao[contador]);

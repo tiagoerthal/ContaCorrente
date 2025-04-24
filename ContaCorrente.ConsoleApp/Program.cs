@@ -30,11 +30,13 @@
 
             conta2.ObterSaldo(conta2);
 
-            //conta1.TransferirPara(conta2, 400);
+            conta1.Transferir(conta1, 400);
 
             //conta1.ExibirExtrato();
 
             Console.WriteLine();
+            conta1.ObterSaldo(conta1);
+            conta2.ObterSaldo(conta2);
 
             //conta2.ExibirExtrato();
             Console.ReadLine();
