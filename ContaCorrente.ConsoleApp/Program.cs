@@ -7,9 +7,7 @@
             ContaCorrente conta1 = new ContaCorrente();
             conta1.saldo = 1000;
             conta1.numeroConta = 12;
-            conta1.limite = 0;
-          
-          //  conta1.movimentacoes = new Movimentacao[10];
+            conta1.limite = 0;          
 
             conta1.ObterSaque(200);
 
@@ -19,26 +17,27 @@
 
             conta1.ObterSaque(200);
 
-            conta1.ObterSaldo(conta1);
+            conta1.ObterSaldo();
 
             ContaCorrente conta2 = new ContaCorrente();
             conta2.saldo = 300;
             conta2.numeroConta = 13;
             conta2.limite = 0;
 
-            //conta2.movimentacoes = new Movimentacao[10];
+            conta2.ObterSaldo();
 
-            conta2.ObterSaldo(conta2);
+            conta1.Transferir(conta2, 400);
 
-            conta1.Transferir(conta1, 400);
+            conta1.ExibirExtrato();
 
-            //conta1.ExibirExtrato();
+            conta2.Transferir(conta1, 200);
+        
+            conta1.ObterSaldo();
 
-            Console.WriteLine();
-            conta1.ObterSaldo(conta1);
-            conta2.ObterSaldo(conta2);
+            conta2.ObterSaldo();
 
-            //conta2.ExibirExtrato();
+            conta2.ExibirExtrato();
+
             Console.ReadLine();
 
         }
